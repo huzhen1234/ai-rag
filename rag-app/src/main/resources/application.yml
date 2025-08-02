@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: hutu-ai
+  #    AI配置
+  ai:
+    ollama:
+      base-url: http://192.168.1.19:11434
+      chat:
+        model: deepseek-r1:7b
+# SimpleLoggerAdvisor 日志
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.hutu: debug
