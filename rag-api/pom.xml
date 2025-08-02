@@ -11,7 +11,12 @@
     <name>rag-api</name>
     <description>RAG API Module</description>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-ollama</artifactId>
+        </dependency>
+    </dependencies>
 
 
     <build>

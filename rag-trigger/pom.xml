@@ -11,6 +11,15 @@
     <description>RAG TRIGGER Module</description>
 
 
+    <dependencies>
+        <dependency>
+            <groupId>com.hutu</groupId>
+            <artifactId>rag-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+    </dependencies>
+
+
 
 
     <build>

@@ -13,10 +13,13 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-model-ollama</artifactId>
+            <groupId>com.hutu</groupId>
+            <artifactId>rag-trigger</artifactId>
+            <version>1.0.0</version>
         </dependency>
     </dependencies>
+
+
 
 
     <build>
