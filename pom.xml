@@ -22,7 +22,7 @@
         <java.version>17</java.version>
 
         <hutool.version>5.8.26</hutool.version>
-        <commons-lang3.version>3.14.0</commons-lang3.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
         <fastjson2.version>2.0.56</fastjson2.version>
     </properties>
     <dependencies>
@@ -60,13 +60,13 @@
     <!--    https://java2ai.com/docs/1.0.0.2/tutorials/starters-and-quick-guide/?spm=4347728f.24230698.0.0.608450aedPnoMQ-->
     <dependencyManagement>
         <dependencies>
-            <dependency>
-                <groupId>com.alibaba.cloud.ai</groupId>
-                <artifactId>spring-ai-alibaba-bom</artifactId>
-                <version>${spring-ai-alibaba.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+<!--            <dependency>-->
+<!--                <groupId>com.alibaba.cloud.ai</groupId>-->
+<!--                <artifactId>spring-ai-alibaba-bom</artifactId>-->
+<!--                <version>${spring-ai-alibaba.version}</version>-->
+<!--                <type>pom</type>-->
+<!--                <scope>import</scope>-->
+<!--            </dependency>-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>

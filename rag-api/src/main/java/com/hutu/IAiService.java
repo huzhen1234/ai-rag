@@ -8,4 +8,6 @@ public interface IAiService {
 
     Flux<String> generateStream(String message);
 
+    void uploadFile();
+
 }
