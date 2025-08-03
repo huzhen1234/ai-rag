@@ -6,6 +6,6 @@ public interface IAiService {
 
     String generate(String message);
 
-    Flux<String> generateStream(String model, String message);
+    Flux<String> generateStream(String message);
 
 }
