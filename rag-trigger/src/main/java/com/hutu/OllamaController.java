@@ -1,6 +1,7 @@
 package com.hutu;
 import lombok.RequiredArgsConstructor;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.ai.content.Media;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.document.DocumentReader;
 import org.springframework.ai.reader.tika.TikaDocumentReader;
@@ -8,6 +9,7 @@ import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.ai.vectorstore.SearchRequest;
 import org.springframework.ai.vectorstore.VectorStore;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,6 +31,9 @@ public class OllamaController implements IAiService {
     @Value("classpath:/data/ragTest.txt")
     private Resource springAiResource;
 
+    @Value("classpath:/data/images.jpg")
+    private Resource springAiImage;
+
     private final VectorStore vectorStore;
 
     private final ChatClient chatClient;
@@ -44,6 +49,14 @@ public class OllamaController implements IAiService {
     @Override
     public Flux<String> generateStream(@RequestParam("message") String message) {
         return chatClient.prompt().user(message).stream().content();
+    }
+
+    @GetMapping(value = "picture")
+    public String analyzePicture() {
+        Media media = Media.builder().mimeType(MediaType.IMAGE_PNG).data(springAiImage).build();
+        return chatClient.prompt()
+                .user(promptUserSpec -> promptUserSpec.media(media).text("这张图片上是什么动物呢?"))
+                .call().content();
     }
 
     @GetMapping("/rag/importDocument")
